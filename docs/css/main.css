@@ -789,15 +789,18 @@ a {
   border-top: 2px solid #4ca736;
 }
 .footer__top {
-  padding: 4rem 0 8rem;
+  padding: 4rem 0;
+  padding-bottom: 0;
 }
 @media (max-width: 768px) {
   .footer__top {
     padding: 3rem 0;
+    padding-bottom: 0;
   }
 }
 .footer__bottom {
   padding: 2rem 0;
+  padding-top: 0;
 }
 .footer__container {
   display: -ms-grid;
@@ -860,13 +863,12 @@ a {
   font-weight: 600;
   margin: 0;
 }
-.plug a {
-  color: #0657F6;
-  text-decoration: underline;
-}
 .plug video {
-  width: 10rem;
+  width: 14rem;
   height: auto;
+  height: 12rem;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .menu {

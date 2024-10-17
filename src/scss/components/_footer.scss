@@ -2,16 +2,18 @@
   border-top: 2px solid #4ca736;
 
   &__top {
-    padding: 4rem 0 8rem;
+    padding: 4rem 0;
+    padding-bottom: 0;
 
     @include small-tablet {
       padding: 3rem 0;
+      padding-bottom: 0;
     }
   }
 
   &__bottom {
     padding: 2rem 0;
-
+    padding-top: 0;
 
   }
 
@@ -64,13 +66,11 @@
     margin: 0;
   }
 
-  a {
-    color: #0657F6;
-    text-decoration: underline;
-  }
 
   video {
-    width: 10rem;
+    width: 14rem;
     height: auto;
+    height: 12rem;
+    object-fit: cover;
   }
 }
