@@ -298,10 +298,30 @@ a {
   gap: 9.5rem;
 }
 .nav__link {
+  position: relative;
+  display: inline-block;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 1.6rem;
   color: #1b1c1a;
+}
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #1b1c1a;
+  width: 10%;
+  opacity: 0;
+  height: 1px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+@media (any-hover: hover) {
+  .nav__link:hover::before {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .hero {

@@ -8,9 +8,31 @@
   &__item {}
 
   &__link {
+    position: relative;
+    display: inline-block;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 1.6rem;
     color: #1b1c1a;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: #1b1c1a;
+      width: 10%;
+      opacity: 0;
+      height: 1px;
+
+      transition: .3s ease-out;
+    }
+
+    @include hover {
+      &::before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
   }
 }
