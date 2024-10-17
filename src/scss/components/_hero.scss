@@ -1,0 +1,57 @@
+.hero {
+  height: 100vh;
+
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 62%;
+    height: 100%;
+    z-index: -1;
+    mask-image: url('./../img/mask.svg');
+    mask-size: auto 170%;
+    mask-repeat: no-repeat;
+    mask-position: left;
+    background-color: #FFA53A;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 94rem;
+    height: 88rem;
+    background-image: url('./../img/dish.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 2.4rem;
+    font-weight: 800;
+    font-size: 9.6rem;
+    line-height: 120%;
+    color: #4ca736;
+  }
+
+  &__container {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__desc {
+    max-width: 73rem;
+  }
+}

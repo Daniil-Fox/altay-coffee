@@ -1,0 +1,51 @@
+.proc {
+  padding: 16rem 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 6.4rem;
+    max-width: 96rem;
+  }
+
+  &__slide {
+    .dishes__img {
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.26)
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+
+        cursor: pointer;
+        width: 7.2rem;
+        height: 7.2rem;
+        border-radius: 100%;
+        background-color: #fff;
+        z-index: 4;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('./../img/play.svg');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: 60% center;
+      }
+    }
+  }
+}

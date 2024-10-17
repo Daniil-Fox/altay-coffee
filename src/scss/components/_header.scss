@@ -1,0 +1,26 @@
+// ваш код
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 3rem 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  &__logo {
+    display: block;
+    width: 17rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

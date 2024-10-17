@@ -1,0 +1,46 @@
+.about {
+  padding: 16rem 0 21rem;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
+  &__left {
+    grid-column: 6 span;
+    padding-right: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    grid-column: 6 span;
+  }
+
+  &__img {
+    width: 52rem;
+    height: auto;
+    position: relative;
+
+    img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -18rem;
+      top: -7rem;
+      border-radius: 100%;
+      width: 56.5rem;
+      height: 56.5rem;
+      background-color: #FFA53A;
+    }
+  }
+}
