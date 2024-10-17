@@ -10,8 +10,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders.js */ "./src/js/components/sliders.js");
-/* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/video.js */ "./src/js/components/video.js");
-/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
+/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
+/* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/video.js */ "./src/js/components/video.js");
 
 
 
@@ -97,30 +97,18 @@ new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper('.proc__slider', {
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-const modal = document.querySelector('.modal');
-if (modal) {
-  const videoConts = document.querySelectorAll('[data-video-src]');
-  const modalFrame = modal.querySelector('iframe');
-  videoConts.forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      const src = e.currentTarget.dataset.videoSrc;
-      modalFrame.src = src;
-      modal.classList.add('active');
+const videoCont = document.querySelectorAll('.dishes__img');
+videoCont.forEach(cont => {
+  const videoDish = cont?.querySelector('video');
+  if (videoDish) {
+    videoDish.addEventListener('play', e => {
+      cont.classList.add('active');
     });
-  });
-  const modalBody = modal.querySelector('.modal__body');
-  const modalClose = modal.querySelector('.modal__close');
-  modalBody.addEventListener('click', e => {
-    e.stopPropagation();
-  });
-  modalClose.addEventListener('click', e => {
-    modal.classList.remove('active');
-  });
-  modal.addEventListener('click', e => {
-    modal.classList.remove('active');
-  });
-}
+    videoDish.addEventListener('pause', e => {
+      cont.classList.remove('active');
+    });
+  }
+});
 
 /***/ }),
 

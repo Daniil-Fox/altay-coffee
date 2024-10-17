@@ -712,9 +712,12 @@ a {
     height: 25rem;
   }
 }
-.dishes__img img {
+.dishes__img img,
+.dishes__img video {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .dishes__name {
   padding: 3.2rem 2.4rem 4rem;
@@ -794,7 +797,6 @@ a {
 }
 .proc__slide .dishes__img {
   position: relative;
-  cursor: pointer;
 }
 .proc__slide .dishes__img::after {
   content: "";
@@ -830,6 +832,10 @@ a {
     width: 5.6rem;
     height: 5.6rem;
   }
+}
+.proc__slide .dishes__img.active::before, .proc__slide .dishes__img.active::after {
+  opacity: 0;
+  z-index: -100;
 }
 
 .footer {

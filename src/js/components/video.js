@@ -1,28 +1,16 @@
-const modal = document.querySelector('.modal')
+const videoCont = document.querySelectorAll('.dishes__img')
 
-if(modal){
-  const videoConts = document.querySelectorAll('[data-video-src]')
-  const modalFrame = modal.querySelector('iframe')
-  videoConts.forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault()
-      const src = e.currentTarget.dataset.videoSrc
-      modalFrame.src = src
-      modal.classList.add('active')
+videoCont.forEach(cont => {
+  const videoDish = cont?.querySelector('video')
+  if(videoDish){
+    videoDish.addEventListener('play', e => {
+      cont.classList.add('active')
+
     })
-  })
+    videoDish.addEventListener('pause', e => {
+      cont.classList.remove('active')
+    })
 
+  }
+})
 
-  const modalBody = modal.querySelector('.modal__body')
-  const modalClose = modal.querySelector('.modal__close')
-
-  modalBody.addEventListener('click', e => {
-    e.stopPropagation()
-  })
-  modalClose.addEventListener('click', e => {
-    modal.classList.remove('active')
-  })
-  modal.addEventListener('click', e => {
-    modal.classList.remove('active')
-  })
-}

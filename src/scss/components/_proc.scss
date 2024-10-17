@@ -20,7 +20,6 @@
   &__slide {
     .dishes__img {
       position: relative;
-      cursor: pointer;
 
       &::after {
         content: "";
@@ -54,6 +53,15 @@
         @include small-tablet {
           width: 5.6rem;
           height: 5.6rem;
+        }
+      }
+
+      &.active {
+
+        &::before,
+        &::after {
+          opacity: 0;
+          z-index: -100;
         }
       }
     }
