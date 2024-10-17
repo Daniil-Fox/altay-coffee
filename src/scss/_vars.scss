@@ -8,6 +8,10 @@
   --container-offset: 5rem;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
+  @media (max-width: 576px) {
+    --container-offset: 1.5rem;
+  }
+
   // colors
   --light-color: #fff;
 }

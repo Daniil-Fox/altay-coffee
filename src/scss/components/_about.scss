@@ -1,10 +1,20 @@
 .about {
   padding: 16rem 0 21rem;
 
+  @include small-tablet {
+    padding: 9rem 0;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
+
+    @include small-tablet {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 6rem;
+    }
   }
 
   &__left {
@@ -13,6 +23,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    @include small-tablet {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
   }
 
   &__content {
@@ -23,6 +38,10 @@
     width: 52rem;
     height: auto;
     position: relative;
+
+    @include small-tablet {
+      width: 25rem;
+    }
 
     img {
       position: relative;
@@ -41,6 +60,13 @@
       width: 56.5rem;
       height: 56.5rem;
       background-color: #FFA53A;
+
+      @include small-tablet {
+        width: 27rem;
+        height: 27rem;
+        left: -9rem;
+        top: -3rem;
+      }
     }
   }
 }

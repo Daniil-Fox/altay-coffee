@@ -11,8 +11,35 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders.js */ "./src/js/components/sliders.js");
 /* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/video.js */ "./src/js/components/video.js");
+/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
 
 
+
+
+/***/ }),
+
+/***/ "./src/js/components/menu.js":
+/*!***********************************!*\
+  !*** ./src/js/components/menu.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+const menu = document.querySelector('.menu');
+if (menu) {
+  const burger = document.querySelector('.header__burger');
+  burger.addEventListener('click', e => {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+  });
+  const menuItems = menu.querySelectorAll('.nav__link');
+  menuItems.forEach(link => {
+    link.addEventListener('click', e => {
+      burger.classList.remove('active');
+      menu.classList.remove('active');
+    });
+  });
+}
 
 /***/ }),
 
@@ -34,6 +61,14 @@ new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper('.dishes__slider', {
   navigation: {
     prevEl: '.dish-prev',
     nextEl: '.dish-next'
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    }
   }
 });
 new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper('.proc__slider', {
@@ -42,6 +77,14 @@ new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper('.proc__slider', {
   navigation: {
     prevEl: '.proc-prev',
     nextEl: '.proc-next'
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    }
   }
 });
 

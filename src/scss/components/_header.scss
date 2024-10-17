@@ -7,10 +7,24 @@
   z-index: 100;
   padding: 3rem 0;
 
+  @include small-tablet {
+    padding: 1.6rem 0;
+  }
+
+  &__nav {
+    @include small-tablet {
+      display: none;
+    }
+  }
+
   &__container {
     display: flex;
     align-items: center;
     gap: 10rem;
+
+    @include small-tablet {
+      justify-content: space-between;
+    }
   }
 
   &__logo {
@@ -18,9 +32,87 @@
     width: 17rem;
     height: auto;
 
+    @include small-tablet {
+      width: 11.3rem;
+    }
+
     img {
       width: 100%;
       object-fit: contain;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4ca736;
+    border-radius: 100%;
+    width: 3.2rem;
+    height: 3.2rem;
+    gap: .4rem;
+
+    position: relative;
+    z-index: 120;
+
+    span {
+      display: block;
+      position: absolute;
+      background: #337AB7;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0.9rem;
+      transition: .25s ease-in-out;
+      height: 1.2px;
+      width: 1.6rem;
+      background-color: #fff;
+      transition: .3s ease-out;
+
+      &:nth-child(1) {
+        top: 1.1rem;
+      }
+
+      &:nth-child(2) {
+        top: 1.5rem;
+      }
+
+      &:nth-child(3) {
+        top: 1.9rem;
+      }
+    }
+
+    // &::before,
+    // &::after {
+    //   content: "";
+    //   height: 1.5px;
+    //   width: 1.6rem;
+    //   background-color: #fff;
+
+    //   transition: .3s ease-out;
+    // }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          top: 1.5rem;
+          transform: rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          left: -6rem;
+        }
+
+        &:nth-child(3) {
+          top: 1.5rem;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    @include small-tablet {
+      display: flex;
     }
   }
 }

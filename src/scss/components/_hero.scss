@@ -18,20 +18,49 @@
     mask-repeat: no-repeat;
     mask-position: left;
     background-color: #FFA53A;
+
+    @include small-tablet {
+      top: unset;
+      bottom: 0;
+      right: unset;
+      left: 0;
+      transform: unset;
+      width: 200%;
+      height: 90%;
+      mask-size: 100%;
+      mask-position: left top;
+    }
+
+    @include mobile {
+      mask-size: 140% 140%;
+      mask-position: 10%;
+    }
   }
 
   &::before {
     content: "";
     position: absolute;
-    right: -2rem;
+    right: 0rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 94rem;
-    height: 88rem;
+    width: 85rem;
+    height: 85rem;
     background-image: url('./../img/dish.webp');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    @include small-tablet {
+      width: 38rem;
+      height: 38rem;
+      top: unset;
+      bottom: 20rem;
+      transform: unset;
+    }
+
+    @include mobile {
+      bottom: 10vh;
+    }
   }
 
   &__title {
@@ -41,6 +70,11 @@
     font-size: 9.6rem;
     line-height: 120%;
     color: #4ca736;
+
+    @include small-tablet {
+      font-size: 4rem;
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__container {
@@ -49,6 +83,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include small-tablet {
+      justify-content: flex-start;
+      padding-top: 13rem;
+    }
   }
 
   &__desc {

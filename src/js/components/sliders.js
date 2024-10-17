@@ -10,6 +10,14 @@ new Swiper('.dishes__slider', {
   navigation: {
     prevEl: '.dish-prev',
     nextEl: '.dish-next',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView : 1
+    },
+    768 : {
+      slidesPerView : 2
+    }
   }
 })
 
@@ -20,5 +28,13 @@ new Swiper('.proc__slider', {
   navigation: {
     prevEl: '.proc-prev',
     nextEl: '.proc-next',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView : 1
+    },
+    768 : {
+      slidesPerView : 2
+    }
   }
 })
