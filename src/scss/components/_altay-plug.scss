@@ -1,0 +1,25 @@
+.altay-plug {
+  margin-bottom: 16rem;
+
+  @include small-tablet {
+    margin-bottom: 9.6rem;
+  }
+
+  &__container {
+    padding: 4rem 1.2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    background: #ffa53a;
+
+    border-radius: 2rem;
+  }
+
+  &__desc {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 91rem;
+
+    color: #fff;
+    font-weight: 700;
+  }
+}
